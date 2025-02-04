@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-02-04T15:37:46 IST" name="Default suite" finished-at="2025-02-04T15:38:01 IST" duration-ms="14590">
+    <groups>
+    </groups>
+    <test started-at="2025-02-04T15:37:46 IST" name="Default test" finished-at="2025-02-04T15:38:01 IST" duration-ms="14590">
+      <class name="testscript.LoginTest">
+        <test-method is-config="true" signature="initialiseBrowser()[pri:0, instance:testscript.LoginTest@4c12331b]" started-at="2025-02-04T15:37:46 IST" name="initialiseBrowser" finished-at="2025-02-04T15:37:50 IST" duration-ms="3229" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialiseBrowser -->
+        <test-method signature="verifyInvalidUsernameandInvalidPassword()[pri:0, instance:testscript.LoginTest@4c12331b]" started-at="2025-02-04T15:37:50 IST" name="verifyInvalidUsernameandInvalidPassword" description="verify whether user is able to login with wrong username and correct password" finished-at="2025-02-04T15:37:51 IST" duration-ms="953" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyInvalidUsernameandInvalidPassword -->
+        <test-method is-config="true" signature="browserQuit()[pri:0, instance:testscript.LoginTest@4c12331b]" started-at="2025-02-04T15:37:51 IST" name="browserQuit" finished-at="2025-02-04T15:37:51 IST" duration-ms="168" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserQuit -->
+        <test-method is-config="true" signature="initialiseBrowser()[pri:0, instance:testscript.LoginTest@4c12331b]" started-at="2025-02-04T15:37:51 IST" name="initialiseBrowser" finished-at="2025-02-04T15:37:53 IST" duration-ms="2656" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialiseBrowser -->
+        <test-method signature="verifyValidUsernameandInvalidPassword()[pri:0, instance:testscript.LoginTest@4c12331b]" started-at="2025-02-04T15:37:53 IST" name="verifyValidUsernameandInvalidPassword" description="verify whether user is able to login with correct username and wrong password" finished-at="2025-02-04T15:37:54 IST" duration-ms="536" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyValidUsernameandInvalidPassword -->
+        <test-method is-config="true" signature="browserQuit()[pri:0, instance:testscript.LoginTest@4c12331b]" started-at="2025-02-04T15:37:54 IST" name="browserQuit" finished-at="2025-02-04T15:37:54 IST" duration-ms="92" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserQuit -->
+        <test-method is-config="true" signature="initialiseBrowser()[pri:0, instance:testscript.LoginTest@4c12331b]" started-at="2025-02-04T15:37:54 IST" name="initialiseBrowser" finished-at="2025-02-04T15:37:56 IST" duration-ms="2374" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialiseBrowser -->
+        <test-method signature="verifyValidUsernameandPassword()[pri:0, instance:testscript.LoginTest@4c12331b]" started-at="2025-02-04T15:37:56 IST" name="verifyValidUsernameandPassword" description="verify whether user is able to login with correct username and password" finished-at="2025-02-04T15:37:58 IST" duration-ms="1858" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyValidUsernameandPassword -->
+        <test-method is-config="true" signature="browserQuit()[pri:0, instance:testscript.LoginTest@4c12331b]" started-at="2025-02-04T15:37:58 IST" name="browserQuit" finished-at="2025-02-04T15:37:58 IST" duration-ms="121" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserQuit -->
+        <test-method is-config="true" signature="initialiseBrowser()[pri:0, instance:testscript.LoginTest@4c12331b]" started-at="2025-02-04T15:37:58 IST" name="initialiseBrowser" finished-at="2025-02-04T15:38:00 IST" duration-ms="1885" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialiseBrowser -->
+        <test-method signature="verifyWrongUsernameandValidPassword()[pri:0, instance:testscript.LoginTest@4c12331b]" started-at="2025-02-04T15:38:00 IST" name="verifyWrongUsernameandValidPassword" description="verify whether user is able to login with wrong username and correct password" finished-at="2025-02-04T15:38:01 IST" duration-ms="541" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyWrongUsernameandValidPassword -->
+        <test-method is-config="true" signature="browserQuit()[pri:0, instance:testscript.LoginTest@4c12331b]" started-at="2025-02-04T15:38:01 IST" name="browserQuit" finished-at="2025-02-04T15:38:01 IST" duration-ms="134" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserQuit -->
+      </class> <!-- testscript.LoginTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
