@@ -3,13 +3,13 @@
 <suite name="Suite">
 <parameter name="browser" value="chrome"></parameter>
   <test thread-count="5" name="Test">
+  <groups>
+  <run>
+  <include name="smoke"></include>
+  </run>
+  </groups>
     <classes>
-      <class name="testscript.AddSubcategoryTest">
-     
-     
-      
-     
-    
+      <class name="testscript.LoginTest">
       
       
       </class>

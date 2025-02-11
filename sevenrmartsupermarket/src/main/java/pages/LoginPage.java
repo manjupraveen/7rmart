@@ -6,6 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import utilities.PageUtility;
+
 public class LoginPage {
 
 	public WebDriver driver;
@@ -22,10 +24,14 @@ public class LoginPage {
 	@FindBy(xpath = "//div[@class='row']//child::div[@class='col-lg-3 col-6'][1]")WebElement adminUserTile;
 	@FindBy(xpath = "//button[@class='close']//parent::div")WebElement alert;
 	public void enterUsernameOnUsernameField(String username) {
-		usernameField.sendKeys(username);
+		 PageUtility utility = new PageUtility();
+		 utility.enterDataOnInputField(usernameField, username);
+	
 	}
 	public void enterPasswordOnPasswordField(String password) {
-		passwordField.sendKeys(password);
+		 PageUtility utility = new PageUtility();
+		 utility.enterDataOnInputField(passwordField, password);
+		
 	}
 	public void clickLogin() {
 		signinButton.click();
