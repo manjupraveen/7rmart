@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import constants.Constant;
 import utilities.FileUploadUtility;
 import utilities.PageUtility;
 import utilities.RandomUtility;
@@ -47,9 +48,9 @@ public class AddSubcategoryPage {
 		subcategory.sendKeys(nameofSubcategory);
 	
 }
-	public void chooseImageFile(String path) {
+	public void chooseImageFile() {
 		FileUploadUtility fileuploadutility = new FileUploadUtility();
-		fileuploadutility.usingsendKeys(chooseFile, path);
+		fileuploadutility.usingsendKeys(chooseFile, Constant.TESTDATAFILE1);
 		
 	}
 	public void clickCreateSubcategory() {

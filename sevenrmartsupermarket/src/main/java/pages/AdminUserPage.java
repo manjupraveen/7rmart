@@ -10,6 +10,7 @@ import com.github.javafaker.Faker;
 
 import utilities.PageUtility;
 import utilities.RandomUtility;
+import utilities.WaitUtility;
 
 public class AdminUserPage {
 public WebDriver driver;
@@ -42,7 +43,9 @@ Faker faker = new Faker();
         
     }
 	 public void clickAddNewUser() {
-	        newUserButton.click();
+		 WaitUtility waitutility = new WaitUtility();
+		 waitutility.waituntilElementtobeClickable(driver,newUserButton);
+	     newUserButton.click();
 	    }
 	 public void enterNewUserDetails(String newUsername, String newPassword, String userType) {
 		 PageUtility utility = new PageUtility();

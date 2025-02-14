@@ -22,8 +22,8 @@ public class LoginTest extends Base {
 	@Test
 	(description ="verify whether user is able to login with correct username and wrong password", groups = ("regression") )
 	public void verifyUserLoginWithValidUsernameandInvalidPassword() {
-		String username = "admin";
-		String password = "123";
+		String username = ExcelUtility.getString(2, 0, "LoginPage");
+		String password = ExcelUtility.getString(2, 1, "LoginPage");
 		LoginPage loginpage = new LoginPage (driver);
 		loginpage.enterUsernameOnUsernameField(username);
 		loginpage.enterPasswordOnPasswordField(password);
@@ -35,8 +35,8 @@ public class LoginTest extends Base {
 	@Test
 	(description = "verify whether user is able to login with wrong username and correct password")
 	public void verifyUserLoginWithWrongUsernameandValidPassword() {
-		String username = "admn";
-		String password = "admin";
+		String username = ExcelUtility.getString(3, 0, "LoginPage");
+		String password = ExcelUtility.getString(3, 1, "LoginPage");
 		LoginPage loginpage = new LoginPage (driver);
 		loginpage.enterUsernameOnUsernameField(username);
 		loginpage.enterPasswordOnPasswordField(password);
@@ -47,8 +47,8 @@ public class LoginTest extends Base {
 	@Test
 	(description = "verify whether user is able to login with wrong username and correct password")
 	public void verifyUserLoginWithInvalidUsernameandInvalidPassword() {
-		String username = "admn";
-		String password = "123";
+		String username = ExcelUtility.getString(4, 0, "LoginPage");
+		String password = ExcelUtility.getString(4, 1, "LoginPage");
 		LoginPage loginpage = new LoginPage (driver);
 		loginpage.enterUsernameOnUsernameField(username);
 		loginpage.enterPasswordOnPasswordField(password);

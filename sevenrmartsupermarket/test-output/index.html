@@ -103,7 +103,7 @@
                     <div class="method-list-content passed suite-Suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="testscript.AddSubcategoryTest" class="method navigator-link" hash-for-method="verifySubcategoryCreation">verifySubcategoryCreation</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="testscript.FooterTextTest" class="method navigator-link" hash-for-method="verifyfooterTextUpdation">verifyfooterTextUpdation</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
@@ -121,16 +121,16 @@
           <div class="suite-Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">testscript.AddSubcategoryTest</span>
+              <span class="class-name">testscript.FooterTextTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="verifySubcategoryCreation">
-                  </a> <!-- verifySubcategoryCreation -->
-                  <span class="method-name">verifySubcategoryCreation</span>
+                  <a name="verifyfooterTextUpdation">
+                  </a> <!-- verifyfooterTextUpdation -->
+                  <span class="method-name">verifyfooterTextUpdation</span>
                   <em>
-(verifying subcategory creation)                  </em>
+(checking footer text updation)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -146,9 +146,12 @@
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite name=&quot;Suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;parameter name=&quot;browser&quot; value=&quot;chrome&quot;/&gt;
+  &lt;listeners&gt;
+    &lt;listener class-name=&quot;report.Listeners&quot;/&gt;
+  &lt;/listeners&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Test&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;testscript.AddSubcategoryTest&quot;/&gt;
+      &lt;class name=&quot;testscript.FooterTextTest&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Test --&gt;
 &lt;/suite&gt; &lt;!-- Suite --&gt;
@@ -190,9 +193,9 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'verifySubcategoryCreation')
-data.setCell(0, 2, 'testscript.AddSubcategoryTest')
-data.setCell(0, 3, 2295);
+data.setCell(0, 1, 'verifyfooterTextUpdation')
+data.setCell(0, 2, 'testscript.FooterTextTest')
+data.setCell(0, 3, 2284);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
@@ -223,18 +226,18 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">testscript.AddSubcategoryTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">testscript.FooterTextTest</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">initialiseBrowser(chrome)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">verifySubcategoryCreation</span>
-                <span class="method-start">1947 ms</span>
+                <span class="method-name">verifyfooterTextUpdation</span>
+                <span class="method-start">2080 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">browserQuit</span>
-                <span class="method-start">4244 ms</span>
+                <span class="method-start">4370 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

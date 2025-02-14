@@ -10,6 +10,8 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 
+import utilities.WaitUtility;
+
 public class Base {
 
 	
@@ -33,7 +35,7 @@ public class Base {
 			throw new Exception ("wrong browser");
 		}
 				 driver.get("https://groceryapp.uniqassosiates.com/admin/login");
-				 driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+				 driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(WaitUtility.IMPLICIT_WAIT));
 				 driver.manage().window().maximize();
 		}
 	@AfterMethod

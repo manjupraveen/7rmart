@@ -6,19 +6,20 @@ import org.testng.annotations.Test;
 
 import pages.AdminUserPage;
 import pages.LoginPage;
+import utilities.ExcelUtility;
 
 public class AdminUserTest extends Base {
 	
 	@Test
 	(description = "verify whether existing username can be added")
 	public void verifyWhetherExistingUsernameCanBeCreated() {
-		String username = "admin";
-		String password = "admin";
-		String newUsername = "Vihaan";
-		String newPassword = "vichu";
-		String userType= "Staff";
-		String url = "https://groceryapp.uniqassosiates.com/admin/list-admin";
-		String expectedAlertText = "Username already exists.";
+		String username = ExcelUtility.getString(1, 0, "LoginPage");
+		String password = ExcelUtility.getString(1, 1, "LoginPage");
+		String newUsername = ExcelUtility.getString(1, 0, "AdminUserPage");
+		String newPassword = ExcelUtility.getString(1, 1, "AdminUserPage");
+		String userType= ExcelUtility.getString(1, 2, "AdminUserPage");
+		String url = ExcelUtility.getString(1, 3, "AdminUserPage");
+		String expectedAlertText = ExcelUtility.getString(1, 4, "AdminUserPage");
 		LoginPage loginpage = new LoginPage (driver);
 		loginpage.enterUsernameOnUsernameField(username);
 		loginpage.enterPasswordOnPasswordField(password);
@@ -35,11 +36,11 @@ public class AdminUserTest extends Base {
 	@Test
 	public void verifySearchAdminUser() {
 		
-		String username = "admin";
-		String password = "admin";
-		String searchUsername = "Vihaan123";
-		String searchUserType = "Staff";
-		String url = "https://groceryapp.uniqassosiates.com/admin/list-admin";
+		String username = ExcelUtility.getString(1, 0, "LoginPage");
+		String password = ExcelUtility.getString(1, 1, "LoginPage");
+		String searchUsername = ExcelUtility.getString(1, 5, "AdminUserPage");
+		String searchUserType = ExcelUtility.getString(1, 6, "AdminUserPage");
+		String url = ExcelUtility.getString(2, 3, "AdminUserPage");
 		LoginPage loginpage = new LoginPage (driver);
 		AdminUserPage adminUserPage =new AdminUserPage(driver);
 		loginpage.enterUsernameOnUsernameField(username);
@@ -56,11 +57,11 @@ public class AdminUserTest extends Base {
 	@Test
 	(description = "verification of new admin user creation")
 	public void verifyWhetherNewAdminUserIsCreated() {
-		String username = "admin";
-		String password = "admin";
-		String userType= "Staff";
-		String url = "https://groceryapp.uniqassosiates.com/admin/list-admin";
-		String expectedAlertText = "User Created Successfully";
+		String username = ExcelUtility.getString(1, 0, "LoginPage");
+		String password = ExcelUtility.getString(1, 1, "LoginPage");
+		String userType= ExcelUtility.getString(1, 2, "AdminUserPage");
+		String url = ExcelUtility.getString(3, 3, "AdminUserPage");
+		String expectedAlertText = ExcelUtility.getString(2, 4, "AdminUserPage");
         LoginPage loginpage = new LoginPage (driver);
 		loginpage.enterUsernameOnUsernameField(username);
 		loginpage.enterPasswordOnPasswordField(password);
