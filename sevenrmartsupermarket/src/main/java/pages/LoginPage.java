@@ -23,18 +23,19 @@ public class LoginPage {
 	@FindBy(xpath = "//button[@type='submit']") WebElement signinButton;
 	@FindBy(xpath = "//div[@class='row']//child::div[@class='col-lg-3 col-6'][1]")WebElement adminUserTile;
 	@FindBy(xpath = "//button[@class='close']//parent::div")WebElement alert;
-	public void enterUsernameOnUsernameField(String username) {
+	public LoginPage enterUsernameOnUsernameField(String username) {
 		 PageUtility utility = new PageUtility();
 		 utility.enterDataOnInputField(usernameField, username);
-	
+	return this;
 	}
-	public void enterPasswordOnPasswordField(String password) {
+	public LoginPage enterPasswordOnPasswordField(String password) {
 		 PageUtility utility = new PageUtility();
 		 utility.enterDataOnInputField(passwordField, password);
-		
+		 return this;
 	}
-	public void clickLogin() {
+	public LoginPage clickLogin() {
 		signinButton.click();
+		return this;
 	}
 	public boolean whetherAdminUserTileIsDisplayed() {
 		boolean adminUserTileDisplay = adminUserTile.isDisplayed(); 

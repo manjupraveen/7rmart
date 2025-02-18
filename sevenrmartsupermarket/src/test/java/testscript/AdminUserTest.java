@@ -21,9 +21,9 @@ public class AdminUserTest extends Base {
 		String url = ExcelUtility.getString(1, 3, "AdminUserPage");
 		String expectedAlertText = ExcelUtility.getString(1, 4, "AdminUserPage");
 		LoginPage loginpage = new LoginPage (driver);
-		loginpage.enterUsernameOnUsernameField(username);
-		loginpage.enterPasswordOnPasswordField(password);
-		loginpage.clickLogin();
+		loginpage.enterUsernameOnUsernameField(username).enterPasswordOnPasswordField(password).clickLogin();
+		
+		
 		AdminUserPage adminUserPage =new AdminUserPage(driver);
 		adminUserPage.navigateToAdminPage(url);
 		adminUserPage.clickAddNewUser();
@@ -42,10 +42,10 @@ public class AdminUserTest extends Base {
 		String searchUserType = ExcelUtility.getString(1, 6, "AdminUserPage");
 		String url = ExcelUtility.getString(2, 3, "AdminUserPage");
 		LoginPage loginpage = new LoginPage (driver);
+		loginpage.enterUsernameOnUsernameField(username).enterPasswordOnPasswordField(password).clickLogin();
+		
 		AdminUserPage adminUserPage =new AdminUserPage(driver);
-		loginpage.enterUsernameOnUsernameField(username);
-		loginpage.enterPasswordOnPasswordField(password);
-		loginpage.clickLogin();
+		
 		adminUserPage.navigateToAdminPage(url);
 		adminUserPage.clickSearch();
 		adminUserPage.enterUsernameandUserTypeDetails(searchUsername, searchUserType);
@@ -63,9 +63,9 @@ public class AdminUserTest extends Base {
 		String url = ExcelUtility.getString(3, 3, "AdminUserPage");
 		String expectedAlertText = ExcelUtility.getString(2, 4, "AdminUserPage");
         LoginPage loginpage = new LoginPage (driver);
-		loginpage.enterUsernameOnUsernameField(username);
-		loginpage.enterPasswordOnPasswordField(password);
-		loginpage.clickLogin();
+        loginpage.enterUsernameOnUsernameField(username).enterPasswordOnPasswordField(password).clickLogin();
+		
+		
 		AdminUserPage adminUserPage =new AdminUserPage(driver);
 		adminUserPage.navigateToAdminPage(url);
 		adminUserPage.clickAddNewUser();

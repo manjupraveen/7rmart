@@ -15,7 +15,7 @@ public class AddSubcategoryTest extends Base {
 		String username = ExcelUtility.getString(1, 0, "LoginPage");
 		String password = ExcelUtility.getString(1, 1, "LoginPage");
 		String url = ExcelUtility.getString(1, 0, "SubcategoryPage");
-		String expectedAlertText = "Sub Category Created Successfully";
+		String expectedAlertText = ExcelUtility.getString(1, 2, "SubcategoryPage");
 		LoginPage loginpage = new LoginPage (driver);
 		loginpage.enterUsernameOnUsernameField(username);
 		loginpage.enterPasswordOnPasswordField(password);
