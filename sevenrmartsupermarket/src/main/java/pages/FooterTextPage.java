@@ -21,22 +21,26 @@ public class FooterTextPage {
 	@FindBy(xpath = "//button[contains(@class,'btn')]") WebElement updateButton;
 	@FindBy(xpath = "//div[contains(@class,'alert')]") WebElement alertBox;
 	
-	public void navigateToSubcategoryPage(String url) {
+	public FooterTextPage navigateToSubcategoryPage(String url) {
 		PageUtility utility = new PageUtility();
 		 utility.navigateToPage(driver, url);
+		 return this;
        	}
-	public void clickActionButtony() {
+	public FooterTextPage clickActionButton() {
 		actionButton.click();
+		return this;
 	}
-	public void createEmail() {
+	public FooterTextPage createEmail() {
 		RandomUtility randomutility = new RandomUtility();
 		String email=randomutility.createSubcategory();
 		emailField.sendKeys(email);
+		return this;
 	
 }
-	public void scrollDown() {
+	public FooterTextPage scrollDown() {
 		PageUtility utility = new PageUtility();
 		utility.scrollToElement(driver, updateButton);
+		return this;
 	}
 	public String getAlerttext() {
 		String alertText = alertBox.getText();

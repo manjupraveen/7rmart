@@ -29,32 +29,38 @@ public class AddSubcategoryPage {
 	
 	
 	
-	public void navigateToSubcategoryPage(String url) {
+	public AddSubcategoryPage navigateToSubcategoryPage(String url) {
 		PageUtility utility = new PageUtility();
 		 utility.navigateToPage(driver, url);
+		 return this;
        
 	}
-	public void clicknewSubCategory() {
+	public AddSubcategoryPage clicknewSubCategory() {
 		newbutton.click();
+		return this;
 	}
 	
-	public void chooseselectCategory() {
+	public AddSubcategoryPage chooseselectCategory() {
 		PageUtility utility = new PageUtility();
 		utility.selectfromDropDownUsingVisibleText(category, "veggies");
+		return this;
 	}
-	public void enterSubcategory() {
+	public AddSubcategoryPage enterSubcategory() {
 		RandomUtility randomutility = new RandomUtility();
 		String nameofSubcategory=randomutility.createSubcategory();
 		subcategory.sendKeys(nameofSubcategory);
+		return this;
 	
 }
-	public void chooseImageFile() {
+	public AddSubcategoryPage chooseImageFile() {
 		FileUploadUtility fileuploadutility = new FileUploadUtility();
 		fileuploadutility.usingsendKeys(chooseFile, Constant.TESTDATAFILE1);
+		return this;
 		
 	}
-	public void clickCreateSubcategory() {
+	public AddSubcategoryPage clickCreateSubcategory() {
 		saveButton.click();
+		return this;
 	}
 	public String getAlerttext() {
 		String alertText = alertBox.getText();

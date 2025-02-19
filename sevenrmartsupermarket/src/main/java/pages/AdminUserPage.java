@@ -37,23 +37,26 @@ Faker faker = new Faker();
 	
 	
 	
-	public void navigateToAdminPage(String url) {
+	public AdminUserPage navigateToAdminPage(String url) {
 		 PageUtility utility = new PageUtility();
 		 utility.navigateToPage(driver, url);
+		 return this;
         
     }
-	 public void clickAddNewUser() {
+	 public AdminUserPage clickAddNewUser() {
 		 WaitUtility waitutility = new WaitUtility();
 		 waitutility.waituntilElementtobeClickable(driver,newUserButton);
 	     newUserButton.click();
+	     return this;
 	    }
-	 public void enterNewUserDetails(String newUsername, String newPassword, String userType) {
+	 public AdminUserPage enterNewUserDetails(String newUsername, String newPassword, String userType) {
 		 PageUtility utility = new PageUtility();
 		 utility.enterDataOnInputField(adminUsernameField, newUsername);
 		 utility.enterDataOnInputField(adminPasswordField, newPassword);
 	     utility.selectfromDropDownUsingValue(userTypeDropDown, "staff");
+	     return this;
 	    }
-	 public void createAdminUser() {
+	 public AdminUserPage createAdminUser() {
 		 RandomUtility randomutility = new RandomUtility();
 		 String newUserName=randomutility.createAdminUserName();
 		 adminUsernameField.sendKeys(newUserName);
@@ -61,9 +64,11 @@ Faker faker = new Faker();
 		 adminPasswordField.sendKeys(newPassword);
 		 PageUtility utility = new PageUtility();
 	     utility.selectfromDropDownUsingValue(userTypeDropDown, "staff");
+	     return this;
 	 }
-	 public void clickSave() {
+	 public AdminUserPage clickSave() {
 	        saveButton.click();
+	        return this;
 	    }
 	 public String getAlertText() {
 		 String alertText = alertBox.getText();
@@ -75,17 +80,20 @@ Faker faker = new Faker();
 		 String actualAlertText = alertText.substring(9);
 	        return actualAlertText; 
 	    }
-	 public void clickSearch() {
+	 public AdminUserPage clickSearch() {
 		 searchButton.click();
+		 return this;
 	 }
-	 public void enterUsernameandUserTypeDetails(String searchUsername, String userType) {
+	 public AdminUserPage enterUsernameandUserTypeDetails(String searchUsername, String userType) {
 		 PageUtility utility = new PageUtility();
 		 utility.enterDataOnInputField(usernameInputField, searchUsername);
 		 utility.selectfromDropDownUsingValue(searchAdminUserTypeDropDown, "staff");
+		 return this;
 		 
 		}
-	 public void clickSearchButton() {
+	 public AdminUserPage clickSearchButton() {
 		 searchButton1.click();
+		 return this;
 		 
 	 } 
 	 public String getSearchResult() {

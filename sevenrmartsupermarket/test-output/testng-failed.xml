@@ -7,13 +7,13 @@
   </listeners>
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="testscript.ChangePasswordTest">
+      <class name="testscript.AddSubcategoryTest">
         <methods>
-          <include name="verifyChangePasswordField"/>
+          <include name="verifySubcategoryCreation"/>
           <include name="initialiseBrowser"/>
           <include name="browserQuit"/>
         </methods>
-      </class> <!-- testscript.ChangePasswordTest -->
+      </class> <!-- testscript.AddSubcategoryTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

@@ -23,21 +23,25 @@ public class MenuManagementPage {
 	@FindBy(xpath = "//button[contains(@class,'btn-block-sm')]")WebElement saveButton;
 	@FindBy(xpath = "//div[contains(@class,'alert-success ')]") WebElement alertBox;
 	
-			public void navigateToMenuManagementPage(String url) {
+			public MenuManagementPage navigateToMenuManagementPage(String url) {
 				 PageUtility utility = new PageUtility();
 				 utility.navigateToPage(driver, url);
+				 return this;
 		        
 		    }
-			public void clickAddNewMenu() {
+			public MenuManagementPage clickAddNewMenu() {
 			     newButton.click();
+			     return this;
 			    }
-			public void enetrMenuName(String menuName) {
+			public MenuManagementPage enetrMenuName(String menuName) {
 				 PageUtility utility = new PageUtility();
 				 utility.enterDataOnInputField(menuNameInputField, menuName);
+				 return this;
 			}
-			public void scrollDown() {
+			public MenuManagementPage scrollDown() {
 				PageUtility utility = new PageUtility();
 				utility.scrollToElement(driver, saveButton);
+				return this;
 			}
 			public String getAlerttext() {
 				String alertText = alertBox.getText();

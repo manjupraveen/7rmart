@@ -20,15 +20,11 @@ public void verifyEnterNewsInformation() {
 	String news = ExcelUtility.getString(1, 1, "ManageNewsPage");
 	String expectedMessage = ExcelUtility.getString(1, 2, "ManageNewsPage");
 	LoginPage loginpage = new LoginPage (driver);
-	loginpage.enterUsernameOnUsernameField(username);
-	loginpage.enterPasswordOnPasswordField(password);
-	loginpage.clickLogin();
-	ManageNewsPage addcategorypage = new ManageNewsPage(driver);
-	addcategorypage.navigateToPage(url);
-	addcategorypage.enterNews(news);
-	addcategorypage.clickSave();
-	addcategorypage.getAlertText();
-	String actualAlertTextDisplayed = addcategorypage.getAlertText();
+	loginpage.enterUsernameOnUsernameField(username).enterPasswordOnPasswordField(password).clickLogin();
+	ManageNewsPage managenewspage = new ManageNewsPage(driver);
+	managenewspage.navigateToPage(url).enterNews(news).clickSave();
+	managenewspage.getAlertText();
+	String actualAlertTextDisplayed = managenewspage.getAlertText();
 	assertEquals(actualAlertTextDisplayed,expectedMessage ,"unable to create news");
 }
 }

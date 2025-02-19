@@ -9,6 +9,8 @@ import pages.LoginPage;
 import utilities.ExcelUtility;
 
 public class AddSubcategoryTest extends Base {
+	LoginPage loginpage;
+	AddSubcategoryPage addsubcatpage;
 	@Test
 	(description = "verifying subcategory creation")
 	public void verifySubcategoryCreation() {
@@ -16,17 +18,9 @@ public class AddSubcategoryTest extends Base {
 		String password = ExcelUtility.getString(1, 1, "LoginPage");
 		String url = ExcelUtility.getString(1, 0, "SubcategoryPage");
 		String expectedAlertText = ExcelUtility.getString(1, 2, "SubcategoryPage");
-		LoginPage loginpage = new LoginPage (driver);
-		loginpage.enterUsernameOnUsernameField(username);
-		loginpage.enterPasswordOnPasswordField(password);
-		loginpage.clickLogin();
-		AddSubcategoryPage addsubcatpage = new AddSubcategoryPage(driver);
-		addsubcatpage.navigateToSubcategoryPage(url);
-		addsubcatpage.clicknewSubCategory();
-		addsubcatpage.chooseselectCategory();
-		addsubcatpage.enterSubcategory();
-		addsubcatpage.chooseImageFile();
-		addsubcatpage.clickCreateSubcategory();
+		loginpage = new LoginPage (driver);
+		addsubcatpage =loginpage.enterUsernameOnUsernameField(username).enterPasswordOnPasswordField(password).clickLogin().
+		navigateToSubcategoryPage(url).clicknewSubCategory().chooseselectCategory().enterSubcategory().chooseImageFile().clickCreateSubcategory();
 		addsubcatpage.getAlerttext();
 		String actualAlertTextDisplayed = addsubcatpage.getAlerttext();
 		assertEquals(actualAlertTextDisplayed,expectedAlertText ,"unable to add sub category");

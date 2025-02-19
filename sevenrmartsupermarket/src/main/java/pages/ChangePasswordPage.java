@@ -23,25 +23,30 @@ public class ChangePasswordPage {
 	
 	
 	
-	public void navigateToChangePasswordPage(String url) {
+	public ChangePasswordPage navigateToChangePasswordPage(String url) {
 		PageUtility utility = new PageUtility();
 		 utility.navigateToPage(driver, url);
+		 return this;
 	}
 
-	public void enterOldPassword(String oldpassword) {
+	public ChangePasswordPage enterOldPassword(String oldpassword) {
 		PageUtility utility = new PageUtility();
 		utility.enterDataOnInputField(oldPasswordField, oldpassword);
+		return this;
 	}
-	public void enterNewPassword(String newpassword) {
+	public ChangePasswordPage enterNewPassword(String newpassword) {
 		PageUtility utility = new PageUtility();
 		utility.enterDataOnInputField(newPasswordField, newpassword);
+		return this;
 	}
-	public void enterConfirmNewPassword(String newpassword) {
+	public ChangePasswordPage enterConfirmNewPassword(String newpassword) {
 		PageUtility utility = new PageUtility();
 		utility.enterDataOnInputField(confirmPasswordField, newpassword);
+		return this;
 	}
-	public void clickChangeButton() {
+	public ChangePasswordPage clickChangeButton() {
 		changeButton.click();
+		return this;
 	}
 	public String getAlerttext() {
 		String alertText = alertBox.getText();

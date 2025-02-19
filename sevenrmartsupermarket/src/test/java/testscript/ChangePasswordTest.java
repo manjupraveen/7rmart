@@ -18,15 +18,9 @@ public class ChangePasswordTest extends Base {
 		String expectedAlertText = ExcelUtility.getString(1, 3, "ChangePasswordPage");
 		String newpassword = ExcelUtility.getString(1, 2, "ChangePasswordPage");
 		LoginPage loginpage = new LoginPage (driver);
-		loginpage.enterUsernameOnUsernameField(username);
-		loginpage.enterPasswordOnPasswordField(password);
-		loginpage.clickLogin();
+		loginpage.enterUsernameOnUsernameField(username).enterPasswordOnPasswordField(newpassword).clickLogin();
 		ChangePasswordPage changepasswordpage = new ChangePasswordPage(driver);
-		changepasswordpage.navigateToChangePasswordPage(url);
-		changepasswordpage.enterOldPassword(password);
-		changepasswordpage.enterNewPassword(newpassword);
-		changepasswordpage.enterConfirmNewPassword(newpassword);
-		changepasswordpage.clickChangeButton();
+		changepasswordpage.navigateToChangePasswordPage(url).enterOldPassword(password).enterNewPassword(newpassword).enterConfirmNewPassword(newpassword).clickChangeButton();
 		changepasswordpage.getAlerttext();
 		String actualAlertTextDisplayed = changepasswordpage.getAlerttext();
 		assertEquals(actualAlertTextDisplayed,expectedAlertText ,"unable to change password");

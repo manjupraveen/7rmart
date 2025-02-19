@@ -18,14 +18,9 @@ public class MenuManagementTest extends Base {
 		String expectedAlertText =  ExcelUtility.getString(1, 1, "MenuManagementPage");
 		String menuName = ExcelUtility.getString(1, 2, "MenuManagementPage");
 		LoginPage loginpage = new LoginPage (driver);
-		loginpage.enterUsernameOnUsernameField(username);
-		loginpage.enterPasswordOnPasswordField(password);
-		loginpage.clickLogin();
+		loginpage.enterUsernameOnUsernameField(username).enterPasswordOnPasswordField(password).clickLogin();
 		MenuManagementPage menumanagementpage = new MenuManagementPage(driver);
-		menumanagementpage.navigateToMenuManagementPage(url);
-		menumanagementpage.clickAddNewMenu();
-		menumanagementpage.enetrMenuName(menuName);
-		menumanagementpage.scrollDown();
+		menumanagementpage.navigateToMenuManagementPage(url).clickAddNewMenu().enetrMenuName(menuName).scrollDown();
 		menumanagementpage.getAlerttext();
 		String actualAlertTextDisplayed = menumanagementpage.getAlerttext();
 		assertEquals(actualAlertTextDisplayed,expectedAlertText ,"unable to add new menu");

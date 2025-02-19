@@ -22,13 +22,8 @@ public class AdminUserTest extends Base {
 		String expectedAlertText = ExcelUtility.getString(1, 4, "AdminUserPage");
 		LoginPage loginpage = new LoginPage (driver);
 		loginpage.enterUsernameOnUsernameField(username).enterPasswordOnPasswordField(password).clickLogin();
-		
-		
 		AdminUserPage adminUserPage =new AdminUserPage(driver);
-		adminUserPage.navigateToAdminPage(url);
-		adminUserPage.clickAddNewUser();
-		adminUserPage.enterNewUserDetails(newUsername, newPassword, userType);
-		adminUserPage.clickSave();
+		adminUserPage.navigateToAdminPage(url).clickAddNewUser().enterNewUserDetails(newUsername, newPassword, userType).clickSave();
 		adminUserPage.getAlertText();
 		String actualAlertTextDisplayed = adminUserPage.getAlertText();
 		assertEquals(actualAlertTextDisplayed,expectedAlertText ,"created already existing username");
@@ -43,13 +38,8 @@ public class AdminUserTest extends Base {
 		String url = ExcelUtility.getString(2, 3, "AdminUserPage");
 		LoginPage loginpage = new LoginPage (driver);
 		loginpage.enterUsernameOnUsernameField(username).enterPasswordOnPasswordField(password).clickLogin();
-		
 		AdminUserPage adminUserPage =new AdminUserPage(driver);
-		
-		adminUserPage.navigateToAdminPage(url);
-		adminUserPage.clickSearch();
-		adminUserPage.enterUsernameandUserTypeDetails(searchUsername, searchUserType);
-		adminUserPage.clickSearchButton();
+		adminUserPage.navigateToAdminPage(url).clickSearch().enterUsernameandUserTypeDetails(searchUsername, searchUserType).clickSearchButton();
 		adminUserPage.getSearchResult();
 		String actualUsername = adminUserPage.getSearchResult();
 		assertEquals(actualUsername,searchUsername, "Failed to find created username");
@@ -64,13 +54,8 @@ public class AdminUserTest extends Base {
 		String expectedAlertText = ExcelUtility.getString(2, 4, "AdminUserPage");
         LoginPage loginpage = new LoginPage (driver);
         loginpage.enterUsernameOnUsernameField(username).enterPasswordOnPasswordField(password).clickLogin();
-		
-		
 		AdminUserPage adminUserPage =new AdminUserPage(driver);
-		adminUserPage.navigateToAdminPage(url);
-		adminUserPage.clickAddNewUser();
-		adminUserPage.createAdminUser();
-		adminUserPage.clickSave();
+		adminUserPage.navigateToAdminPage(url).clickAddNewUser().createAdminUser().clickSave();
 		adminUserPage.getAlertTextOfUserCreated();
 		String actualAlertTextDisplayed = adminUserPage.getAlertText();
 		assertEquals(actualAlertTextDisplayed,expectedAlertText ,"Unable to create new admin user");

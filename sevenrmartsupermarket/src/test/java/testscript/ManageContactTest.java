@@ -17,15 +17,9 @@ public class ManageContactTest extends Base {
 		String url = ExcelUtility.getString(1, 0, "ManageContactPage");
 		String expectedAlertText =  ExcelUtility.getString(1, 1, "ManageContactPage");
 		LoginPage loginpage = new LoginPage (driver);
-		loginpage.enterUsernameOnUsernameField(username);
-		loginpage.enterPasswordOnPasswordField(password);
-		loginpage.clickLogin();
+		loginpage.enterUsernameOnUsernameField(username).enterPasswordOnPasswordField(password).clickLogin();
 		ManageContactPage managecontactpage = new ManageContactPage(driver);
-		managecontactpage.navigateToManageCoontactPage(url);
-		managecontactpage.clickActionButton();
-		managecontactpage.clearPhoneNumberField();
-		managecontactpage.enterPhoneNumber();
-		managecontactpage.scrollDown();
+		managecontactpage.navigateToManageCoontactPage(url).clickActionButton().clearPhoneNumberField().enterPhoneNumber().scrollDown();
 		managecontactpage.getAlerttext();
 		String actualAlertTextDisplayed = managecontactpage.getAlerttext();
 		assertEquals(actualAlertTextDisplayed,expectedAlertText ,"unable to update contact");

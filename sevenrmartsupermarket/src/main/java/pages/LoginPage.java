@@ -33,9 +33,9 @@ public class LoginPage {
 		 utility.enterDataOnInputField(passwordField, password);
 		 return this;
 	}
-	public LoginPage clickLogin() {
+	public AddSubcategoryPage clickLogin() {
 		signinButton.click();
-		return this;
+		return new AddSubcategoryPage(driver);
 	}
 	public boolean whetherAdminUserTileIsDisplayed() {
 		boolean adminUserTileDisplay = adminUserTile.isDisplayed(); 

@@ -17,14 +17,9 @@ public void verifyfooterTextUpdation() {
 	String url = ExcelUtility.getString(1, 0, "FooterTextPage");
 	String expectedAlertText =  ExcelUtility.getString(1, 2, "FooterTextPage");
 	LoginPage loginpage = new LoginPage (driver);
-	loginpage.enterUsernameOnUsernameField(username);
-	loginpage.enterPasswordOnPasswordField(password);
-	loginpage.clickLogin();
+	loginpage.enterUsernameOnUsernameField(username).enterPasswordOnPasswordField(password).clickLogin();
 	FooterTextPage footertextpage = new FooterTextPage(driver);
-	footertextpage.navigateToSubcategoryPage(url);
-	footertextpage.clickActionButtony();
-	footertextpage.createEmail();
-	footertextpage.scrollDown();
+	footertextpage.navigateToSubcategoryPage(url).clickActionButton().createEmail().scrollDown();
 	footertextpage.getAlerttext();
 	String actualAlertTextDisplayed = footertextpage.getAlerttext();
 	assertEquals(actualAlertTextDisplayed,expectedAlertText ,"unable to update footer text");

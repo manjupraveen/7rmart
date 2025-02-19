@@ -23,28 +23,33 @@ public WebDriver driver;
 	@FindBy(xpath = "//div[@class='card-footer center']//child::button") WebElement updateButton;
 	@FindBy(xpath = "//div[@class='alert alert-success alert-dismissible']") WebElement alertBox;
 	
-	public void navigateToManageCoontactPage(String url) {
+	public ManageContactPage navigateToManageCoontactPage(String url) {
 		PageUtility utility = new PageUtility();
 		 utility.navigateToPage(driver, url);
+		 return this;
        
 	}
-	public void clickActionButton() {
+	public ManageContactPage clickActionButton() {
 		actionButton.click();
+		return this;
 	}
-	public void clearPhoneNumberField() {
+	public ManageContactPage clearPhoneNumberField() {
 		WaitUtility waitutility = new WaitUtility();
 		waitutility.waitForElement(driver,phoneInputField );
 		phoneInputField.clear();
+		return this;
 	}
-	public void enterPhoneNumber() {
+	public ManageContactPage enterPhoneNumber() {
 		RandomUtility randomutility = new RandomUtility();
 		String phoneNumber=randomutility.createPhoneNumber();
 		phoneInputField.sendKeys(phoneNumber);
+		return this;
 	
 }
-	public void scrollDown() {
+	public ManageContactPage scrollDown() {
 		PageUtility utility = new PageUtility();
 		utility.scrollToElement(driver, updateButton);
+		return this;
 	}
 	
 	public String getAlerttext() {

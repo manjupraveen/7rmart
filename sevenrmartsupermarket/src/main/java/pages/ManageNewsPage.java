@@ -18,15 +18,19 @@ public class ManageNewsPage {
 		@FindBy(xpath = "//textarea[@id='news']") WebElement enterNews;
 		@FindBy(xpath = "//button[@type='submit']") WebElement clickSave;
 		@FindBy(xpath = "//div[@class='alert alert-success alert-dismissible']")WebElement alertBox;
-		public void navigateToPage(String url) {
+		
+		public ManageNewsPage navigateToPage(String url) {
 			driver.navigate().to(url);
+			return this;
 		}
 		
-		public void enterNews(String news) {
+		public ManageNewsPage enterNews(String news) {
 			enterNews.sendKeys(news);
+			return this;
 		}
-		public void clickSave() {
+		public ManageNewsPage clickSave() {
 			clickSave.click();
+			return this;
 		}
 		 public String getAlertText() {
 			 String alertText = alertBox.getText();

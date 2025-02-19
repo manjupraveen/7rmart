@@ -27,8 +27,6 @@ public class LoginTest extends Base {
 		String password = ExcelUtility.getString(2, 1, "LoginPage");
 		LoginPage loginpage = new LoginPage (driver);
 		loginpage.enterUsernameOnUsernameField(username).enterPasswordOnPasswordField(password).clickLogin();
-		
-		
 		boolean isAlertDisplayed = loginpage.alertIsDisplayed();
 		assertTrue(isAlertDisplayed, "User is able to login evenif with valid username and invalid password");
 		
@@ -40,20 +38,14 @@ public class LoginTest extends Base {
 		String password = ExcelUtility.getString(3, 1, "LoginPage");
 		LoginPage loginpage = new LoginPage (driver);
 		loginpage.enterUsernameOnUsernameField(username).enterPasswordOnPasswordField(password).clickLogin();
-		
-		
 		boolean isAlertDisplayed = loginpage.alertIsDisplayed();
 		assertTrue(isAlertDisplayed, "User is able to login even with invalid username and valid password");
 	}
 	@Test
 	(description = "verify whether user is able to login with wrong username and correct password", dataProvider = "LoginProvider")
 	public void verifyUserLoginWithInvalidUsernameandInvalidPassword(String username, String password) {
-		//String username = ExcelUtility.getString(4, 0, "LoginPage");
-		//String password = ExcelUtility.getString(4, 1, "LoginPage");
 		LoginPage loginpage = new LoginPage (driver);
 		loginpage.enterUsernameOnUsernameField(username).enterPasswordOnPasswordField(password).clickLogin();
-		
-		
 		boolean isAlertDisplayed = loginpage.alertIsDisplayed();
 		assertTrue(isAlertDisplayed, "User is able to login even if  username and password are invalid");
 	}
